@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #9DADDC;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+nav{
+    background-color: black;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}  
+
+.pag1{
+    max-width: 100%;
+}
+
+.imgPrincipal{
+    max-width: 100%;
+    height: auto;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+
+#productos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+article{
+    border: solid;
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+article img{
+    max-width: 100%;
+    height: auto;
+}
+
+#contacto{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+#form{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: 0px 300px;
+}
+
+.enviar{
+    margin-top: 30px;
+    width: 100px;
+}

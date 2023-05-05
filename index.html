@@ -4,10 +4,113 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link type="image/png" sizes="16x16" rel="icon" href="./img/icons8-estadio-16.png">
+    <link rel="stylesheet" href="./style.css">
+    <title>SS Indumentaria</title>
 </head>
 <body>
-    <h1>Mi primera aplicacion</h1>
+    <header>
+        <h1>INDUMENTARIA DEPORTIVA</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="./index.html">Inicio</a>
+            </li>
+            <li>
+                <a href="#productos">Productos</a>
+            </li>
+            <li>
+                <a href="#contacto">Contacto</a>
+            </li>
+            <li>
+                <a href="#carrito">Carrito</a>
+            </li>
+        </ul>
+    </nav>
+    <h2>Ponete el conjunto de tu equipo favorito</h2>
+    <div id="productos">
+        <article>
+            <img src="./img/camiseta-boca.webp" alt="Camiseta Boca Juniors temporada 22/23.">
+            <h3>CAMISETA TITULAR BOCA JUNIORS TEMPORADA 22/23</h3>
+            <p>$21.999</p>
+            <button>Agregar al carrito</button>
+        </article>
+        <article>
+            <img src="./img/camiseta-suplente-boca.jpg" alt="Camiseta alternativa Boca Juniors temporada 22/23.">
+            <h3>CAMISETA ALTERNATIVA BOCA JUNIORS TEMPORADA 22/23</h3>
+            <p>$21.999</p>
+            <button>Agregar al carrito</button>
+        </article>
+        <article>
+            <img src="./img/camiseta-icon-argentina.jpg" alt="Camiseta ICON Argentina 2022.">
+            <h3>Camiseta 3/4 Icon Argentina</h3>
+            <p>$29.999</p>
+            <button>Agregar al carrito</button>
+        </article>
+        <article>
+            <img src="./img/camiseta-suplente-argentina.jpg" alt="Camiseta alternativa seleccion Argentina 2022.">
+            <h3>Camiseta alternativa seleccion Argentina 2022</h3>
+            <p>$21.999</p>
+            <button>Agregar al carrito</button>
+        </article>
+        <article>
+            <img src="./img/camiseta-titular-madrid.webp" alt="Camiseta titular Real Madrid temporada 22/23.">
+            <h3>Camiseta titular Real Madrid temporada 22/23</h3>
+            <p>$21.999</p>
+            <button>Agregar al carrito</button>
+        </article>
+        <article>
+            <img src="./img/camiseta-suplente-madrid.webp" alt="Camiseta alternativa Real Madrid temporada 21/22.">
+            <h3>Camiseta alternativa Real Madrid temporada 21/22</h3>
+            <p>$16.999</p>
+            <button>Agregar al carrito</button>
+        </article>
+        <article>
+            <img src="./img/short-argentina.webp" alt="Short titular seleccion Argentina 2022.">
+            <h3>Short titular seleccion Argentina 2022</h3>
+            <p>$12.999</p>
+            <button>Agregar al carrito</button>
+        </article>
+        <article>
+            <img src="./img/short-boca.webp" alt="Short titular Boca Juniors temporada 22/23.">
+            <h3>Short titular Boca Juniors temporada 22/23</h3>
+            <p>$12.999</p>
+            <button>Agregar al carrito</button>
+        </article>
+        <article>
+            <img src="./img/short-real-madrid.webp" alt="Short titular Real Madrid temporada 22/23.">
+            <h3>Short titular Real Madrid temporada 22/23</h3>
+            <p>$12.999</p>
+            <button>Agregar al carrito</button>
+        </article>
+    </div>
+    <div id="contacto">
+        <h2>Contactate con nosotros</h2>
+        <form id="form" method="post" action="enviar_formulario.php">
+            <label>Nombre:</label>
+            <input type="text" name="nombre" required>
+            <label>Correo electrónico:</label>
+            <input type="email" name="email" required>
+            <label>Asunto:</label>
+            <input type="text" name="asunto" required>
+            <label>Mensaje:</label>
+            <textarea name="mensaje" required></textarea>
+            <button class="enviar">Enviar</button>
+        </form>
+    </div>
+    <div id="carrito" class="container">
+        <h2>Tu Carrito</h2>
+        <em>Tus productos seleccionados...</em>.
+    
+        <div class="container-cart">
+            <h4 class="card-title">Producto C</h4>
+            <p class="card-text">Precio: </p>
+            <button type="button" class="btn btn-outline-primary">Eliminar</button>
+        </div>
+    </div>
+
     <script src="./app.js"></script>
 </body>
-</html>
+</html> 
