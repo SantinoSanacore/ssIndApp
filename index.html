@@ -19,7 +19,7 @@
                 <a href="./index.html">Inicio</a>
             </li>
             <li>
-                <a href="#productos">Productos</a>
+                <a href="#divProductos">Productos</a>
             </li>
             <li>
                 <a href="#contacto">Contacto</a>
@@ -30,86 +30,28 @@
         </ul>
     </nav>
     <h2>Ponete el conjunto de tu equipo favorito</h2>
-    <div id="productos">
-        <article>
-            <img src="./img/camiseta-boca.webp" alt="Camiseta Boca Juniors temporada 22/23.">
-            <h3>CAMISETA TITULAR BOCA JUNIORS TEMPORADA 22/23</h3>
-            <p>$21.999</p>
-            <button>Agregar al carrito</button>
-        </article>
-        <article>
-            <img src="./img/camiseta-suplente-boca.jpg" alt="Camiseta alternativa Boca Juniors temporada 22/23.">
-            <h3>CAMISETA ALTERNATIVA BOCA JUNIORS TEMPORADA 22/23</h3>
-            <p>$21.999</p>
-            <button>Agregar al carrito</button>
-        </article>
-        <article>
-            <img src="./img/camiseta-icon-argentina.jpg" alt="Camiseta ICON Argentina 2022.">
-            <h3>Camiseta 3/4 Icon Argentina</h3>
-            <p>$29.999</p>
-            <button>Agregar al carrito</button>
-        </article>
-        <article>
-            <img src="./img/camiseta-suplente-argentina.jpg" alt="Camiseta alternativa seleccion Argentina 2022.">
-            <h3>Camiseta alternativa seleccion Argentina 2022</h3>
-            <p>$21.999</p>
-            <button>Agregar al carrito</button>
-        </article>
-        <article>
-            <img src="./img/camiseta-titular-madrid.webp" alt="Camiseta titular Real Madrid temporada 22/23.">
-            <h3>Camiseta titular Real Madrid temporada 22/23</h3>
-            <p>$21.999</p>
-            <button>Agregar al carrito</button>
-        </article>
-        <article>
-            <img src="./img/camiseta-suplente-madrid.webp" alt="Camiseta alternativa Real Madrid temporada 21/22.">
-            <h3>Camiseta alternativa Real Madrid temporada 21/22</h3>
-            <p>$16.999</p>
-            <button>Agregar al carrito</button>
-        </article>
-        <article>
-            <img src="./img/short-argentina.webp" alt="Short titular seleccion Argentina 2022.">
-            <h3>Short titular seleccion Argentina 2022</h3>
-            <p>$12.999</p>
-            <button>Agregar al carrito</button>
-        </article>
-        <article>
-            <img src="./img/short-boca.webp" alt="Short titular Boca Juniors temporada 22/23.">
-            <h3>Short titular Boca Juniors temporada 22/23</h3>
-            <p>$12.999</p>
-            <button>Agregar al carrito</button>
-        </article>
-        <article>
-            <img src="./img/short-real-madrid.webp" alt="Short titular Real Madrid temporada 22/23.">
-            <h3>Short titular Real Madrid temporada 22/23</h3>
-            <p>$12.999</p>
-            <button>Agregar al carrito</button>
-        </article>
+    <div id="divProductos">
+        
     </div>
+    <h2>Contactate con nosotros</h2>
     <div id="contacto">
-        <h2>Contactate con nosotros</h2>
         <form id="form" method="post" action="enviar_formulario.php">
-            <label>Nombre:</label>
-            <input type="text" name="nombre" required>
+            <label >Nombre:</label>
+            <input type="text" id="nombreCliente" name="nombre" required>
             <label>Correo electrónico:</label>
-            <input type="email" name="email" required>
+            <input type="email" id="emailCliente" name="email" required>
             <label>Asunto:</label>
-            <input type="text" name="asunto" required>
+            <input type="text" id="asuntoCliente" name="asunto" required>
             <label>Mensaje:</label>
-            <textarea name="mensaje" required></textarea>
-            <button class="enviar">Enviar</button>
+            <textarea name="mensaje" id="mensajeCliente" required></textarea>
+            <input type="submit" value="Enviar">
         </form>
     </div>
-    <div id="carrito" class="container">
-        <h2>Tu Carrito</h2>
-        <em>Tus productos seleccionados...</em>.
-    
-        <div class="container-cart">
-            <h4 class="card-title">Producto C</h4>
-            <p class="card-text">Precio: </p>
-            <button type="button" class="btn btn-outline-primary">Eliminar</button>
-        </div>
+    <div id="carrito" class="containerCarrito">
+        <h4>Tu carrito</h4>
+        <p>Los productos seleccionados son los siguiente:</p>
     </div>
+
 
     <script src="./app.js"></script>
 </body>
