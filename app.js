@@ -63,16 +63,17 @@ function mostrarProductos(){
     `
         divProductos.append(div)
 })
+    let btn = document.querySelectorAll(".agregarProducto");
+    
+    btn.forEach(b => {
+    b.addEventListener("click", agregarACarrito)
+})
 }
 mostrarProductos();
 
 let carrito = []
-let btn = document.querySelectorAll(".agregarProducto");
-let cantidad = 0
 
-btn.forEach(b => {
-    b.addEventListener("click", agregarACarrito)
-})
+let cantidad = 0
 
 function agregarACarrito(event){
     let boton = event.target
@@ -95,12 +96,39 @@ function agregarACarrito(event){
 const contenedorCarrito = document.querySelector("#carrito")
 
 function mostrarCarrito() {
-    const nombresProductos = carrito.map(producto => `Seleccionaste ${producto.nombre} y cuesta un total de $${producto.precio}, tiene ${producto.cantidad} en el carrito`)
-
+    contenedorCarrito.innerHTML= ""
+    carrito.map(producto => {
     const divCarrito = document.createElement("div")
-    divCarrito.textContent = nombresProductos.join(", ")
+    divCarrito.classList.add("productosSeleccionados")
+    divCarrito.innerHTML= `
+    <div>
+        <h4>${producto.nombre}</h4>
+        <p>El costo de este producto es de $${producto.precio}</p>
+        <p>Cantidad : ${producto.cantidad}</p>
+        <button class="btnEliminar" id="${producto.id}">ELIMINAR</button>
+    </div>
+    `
+    contenedorCarrito.append(divCarrito);
+    })
 
-    contenedorCarrito.append(divCarrito)
+    let botonesEliminar = document.querySelectorAll(".btnEliminar");
+
+    botonesEliminar.forEach(btnE => {
+    btnE.addEventListener("click", eliminarProducto)
+    });
+};
+
+function eliminarProducto(event) {
+    let idProducto = event.target.id;
+    let productoAEliminar = carrito.find(producto => producto.id === parseInt(idProducto));
+
+    if (productoAEliminar.cantidad > 1) {
+        productoAEliminar.cantidad -= 1;
+    } else {
+        carrito = carrito.filter(producto => producto.id !== parseInt(idProducto));
+    }
+
+    mostrarCarrito();
 }
 
 const formulario = document.querySelector("#form")
