@@ -1,0 +1,47 @@
+[
+    { "nombre": "CAMISETA BOCA JUNIORS TITULAR", 
+    "precio": 21999, 
+    "img": "./img/camiseta-boca-titular.jpg",
+    "id": 0
+},
+    { "nombre": "CAMISETA BOCA JUNIORS SUPLENTE",
+    "precio": 21999,
+    "img": "./img/camiseta-boca-suplente.jpg",
+    "id": 1
+},
+    { "nombre": "CAMISETA ARGENTINA ICON",
+    "precio": 29999,
+    "img": "./img/camiseta-argentina-icon.jpg",
+    "id": 2
+},
+    { "nombre": "CAMISETA ARGENTINA SUPLENTE",
+    "precio": 21999,
+    "img": "./img/camiseta-argentina-suplente.jpg",
+    "id": 3
+},
+    { "nombre": "CAMISETA REAL MADRID TITULAR",
+    "precio": 21999,
+    "img": "./img/camiseta-real-titular.jpg",
+    "id": 4
+},
+    { "nombre": "CAMISETA REAL MADRID SUPLENTE",
+    "precio": 16999,
+    "img": "./img/camiseta-real-suplente.jpg",
+    "id": 5
+},
+    { "nombre": "SHORT ARGENTINA TITULAR",
+    "precio": 12999,
+    "img": "./img/short-argentina-titular.jpg",
+    "id": 6
+},
+    { "nombre": "SHORT BOCA JUNIORS TITULAR",
+    "precio": 12999,
+    "img": "./img/short-boca-titular.jpg",
+    "id": 7
+},
+    { "nombre": "SHORT REAL MADRID TITULAR",
+    "precio": 12999,
+    "img": "./img/short-real-titular.jpg",
+    "id": 8
+}
+] 

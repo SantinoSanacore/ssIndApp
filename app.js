@@ -1,52 +1,4 @@
-const productos = [
-    { nombre: "CAMISETA BOCA JUNIORS TITULAR", 
-    precio: 21999, 
-    img: "./img/camiseta-boca-titular.jpg",
-    id: 0
-},
-    { nombre: "CAMISETA BOCA JUNIORS SUPLENTE",
-    precio: 21999,
-    img: "./img/camiseta-boca-suplente.jpg",
-    id: 1
-},
-    { nombre: "CAMISETA ARGENTINA ICON",
-    precio: 29999,
-    img: "./img/camiseta-argentina-icon.jpg",
-    id: 2
-},
-    { nombre: "CAMISETA ARGENTINA SUPLENTE",
-    precio: 21999,
-    img: "./img/camiseta-argentina-suplente.jpg",
-    id: 3
-},
-    { nombre: "CAMISETA REAL MADRID TITULAR",
-    precio: 21999,
-    img: "./img/camiseta-real-titular.jpg",
-    id: 4
-},
-    { nombre: "CAMISETA REAL MADRID SUPLENTE",
-    precio: 16999,
-    img: "./img/camiseta-real-suplente.jpg",
-    id: 5
-},
-    { nombre: "SHORT ARGENTINA TITULAR",
-    precio: 12999,
-    img: "./img/short-argentina-titular.jpg",
-    id: 6
-},
-    { nombre: "SHORT BOCA JUNIORS TITULAR",
-    precio: 12999,
-    img: "./img/short-boca-titular.jpg",
-    id: 7
-},
-    { nombre: "SHORT REAL MADRID TITULAR",
-    precio: 12999,
-    img: "./img/short-real-titular.jpg",
-    id: 8
-}
-] 
-
-const divProductos = document.querySelector("#divProductos")
+/*const divProductos = document.querySelector("#divProductos")
 
 function mostrarProductos(){
     productos.forEach(producto => {
@@ -78,6 +30,21 @@ let cantidad = 0
 function agregarACarrito(event){
     let boton = event.target
     let idAgregar = boton.id
+
+    Toastify({
+        text: "Producto agregado",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", 
+        position: "right",
+        stopOnFocus: true, 
+        style: {
+        background: "green",
+        },
+        onClick: function(){}
+    }).showToast();
 
     let productoEncontrado = productos.find(p => {
         return p.id === parseInt(boton.id)
@@ -122,6 +89,21 @@ function eliminarProducto(event) {
     let idProducto = event.target.id;
     let productoAEliminar = carrito.find(producto => producto.id === parseInt(idProducto));
 
+    Toastify({
+        text: "Producto eliminado",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true, 
+        style: {
+        background: "red",
+        },
+        onClick: function(){}
+    }).showToast();
+
     if (productoAEliminar.cantidad > 1) {
         productoAEliminar.cantidad -= 1;
     } else {
@@ -150,3 +132,10 @@ function guardarFormulario(e){
     sessionStorage.setItem(`Mensaje`, valorMensaje)
 }
 
+*/
+
+fetch("/data.json")
+.then((r)=> r.json())
+.then((productos)=>{
+    console.log(productos)
+})
