@@ -1,4 +1,12 @@
-/*const divProductos = document.querySelector("#divProductos")
+let productos = []
+
+fetch("/data.json")
+.then((res) => res.json())
+.then((d)=>{ productos = d
+    mostrarProductos(productos)
+})
+
+const divProductos = document.querySelector("#divProductos")
 
 function mostrarProductos(){
     productos.forEach(producto => {
@@ -21,7 +29,6 @@ function mostrarProductos(){
     b.addEventListener("click", agregarACarrito)
 })
 }
-mostrarProductos();
 
 let carrito = []
 
@@ -68,7 +75,7 @@ function mostrarCarrito() {
     const divCarrito = document.createElement("div")
     divCarrito.classList.add("productosSeleccionados")
     divCarrito.innerHTML= `
-    <div>
+    <div id = "prodEnCarrito">
         <h4>${producto.nombre}</h4>
         <p>El costo de este producto es de $${producto.precio}</p>
         <p>Cantidad : ${producto.cantidad}</p>
@@ -83,6 +90,10 @@ function mostrarCarrito() {
     botonesEliminar.forEach(btnE => {
     btnE.addEventListener("click", eliminarProducto)
     });
+
+    if (carrito.length > 0) {
+        calcularTotal();
+    }
 };
 
 function eliminarProducto(event) {
@@ -113,6 +124,48 @@ function eliminarProducto(event) {
     mostrarCarrito();
 }
 
+let total = 0;
+
+function calcularTotal() {
+    total = carrito.reduce((acumulador, producto) => acumulador + producto.precio * producto.cantidad, 0);
+    const montoTotal = document.createElement("div")
+    montoTotal.classList.add("totalComprado")
+    montoTotal.innerHTML=`
+    <h3>El total de tu compra es de $${total}</h3>
+    <button class = "btnCompraFinal"> COMPRAR </button>
+    <button class = "btnVaciarCarrito"> VACIAR CARRITO </button>
+    `
+    contenedorCarrito.append(montoTotal)
+
+const botonComprar = document.querySelector(".btnCompraFinal")
+const botonVaciar = document.querySelector(".btnVaciarCarrito")
+
+
+botonVaciar.addEventListener("click", ()=> {
+    carrito = []
+    contenedorCarrito.innerHTML = ""
+})
+
+botonComprar.addEventListener("click", () => {
+    Swal.fire({
+        title: 'Desea terminar su compra?',
+        text: `El monto final de su compra es de $${total}`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, deseo terminar de comprar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+        Swal.fire(
+            'Compra finalizada',
+            'Gracias por elegirnos',
+            'success'
+        )
+        }
+    })
+})
+}
 const formulario = document.querySelector("#form")
 formulario.addEventListener("submit", guardarFormulario)
 const nombre = document.querySelector("#nombreCliente")
@@ -131,11 +184,3 @@ function guardarFormulario(e){
     sessionStorage.setItem(`Asunto`, valorAsunto)
     sessionStorage.setItem(`Mensaje`, valorMensaje)
 }
-
-*/
-
-fetch("/data.json")
-.then((r)=> r.json())
-.then((productos)=>{
-    console.log(productos)
-})

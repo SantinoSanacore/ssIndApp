@@ -3,6 +3,258 @@
     padding: 0;
 }
 
+header{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: black;
+    align-items: center;
+    color: white;
+    height: 10vh;
+}
+
+/* Nav bar */
+
+nav {
+    background-color: #eee;
+    text-align: center;
+    height: 5vh;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 0;
+}
+
+li {
+    margin: 0 80px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+a:hover {
+    background-color: #ccc;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+/* Productos */
+
+.articulos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 50px 0px;
+}
+
 .imgProducto{
-    width: 200px;
+    height: 250px;
+}
+
+.agregarProducto {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.agregarProducto:hover {
+    background-color: #45a049;
+}
+
+.agregarProducto:focus {
+    outline: none;
+}
+
+/* Formulario */
+
+#contacto {
+    margin-top: 20px;
+}
+
+#form {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+input[type="submit"]:focus {
+    outline: none;
+}
+
+
+/* Carrito */
+
+#carritoCompras {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.containerCarrito {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+}
+
+#total {
+    margin-top: 10px;
+    text-align: right;
+    font-weight: bold;
+}
+
+#total h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#total button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#total button:hover {
+    background-color: #45a049;
+}
+
+#total button:focus {
+    outline: none;
+}
+
+.productosSeleccionados{
+    background-color: #dddddd;
+    padding: 30px;
+    margin: 15px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+#carrito{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#prodEnCarrito button {
+    background-color: #e46542;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#prodEnCarrito button:hover {
+    background-color: #fc0505;
+}
+
+#prodEnCarrito button:focus {
+    outline: none;
+}
+
+.totalComprado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.totalComprado button{
+    margin: 10px;
+    display: inline;
+}
+
+.btnCompraFinal{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btnCompraFinal:hover{
+    background-color: #45a049;
+}
+
+.btnCompraFinal:focus{
+    outline: none;
+}
+
+.btnVaciarCarrito{
+    background-color: #e46542;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btnVaciarCarrito:hover {
+    background-color: #fc0505;
+}
+
+.btnVaciarCarrito:focus {
+    outline: none;
 }
