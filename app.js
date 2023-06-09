@@ -115,11 +115,7 @@ function eliminarProducto(event) {
         onClick: function(){}
     }).showToast();
 
-    if (productoAEliminar.cantidad > 1) {
-        productoAEliminar.cantidad -= 1;
-    } else {
-        carrito = carrito.filter(producto => producto.id !== parseInt(idProducto));
-    }
+    productoAEliminar.cantidad > 1 ? productoAEliminar.cantidad -= 1 : carrito = carrito.filter(producto => producto.id !== parseInt(idProducto));
 
     mostrarCarrito();
 }
@@ -183,4 +179,39 @@ function guardarFormulario(e){
     sessionStorage.setItem(`Email`, valorEmail)
     sessionStorage.setItem(`Asunto`, valorAsunto)
     sessionStorage.setItem(`Mensaje`, valorMensaje)
+
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+    })
+    
+    swalWithBootstrapButtons.fire({
+        title: 'Este es tu mail?',
+        text: `Se guardo esta direccion de mail: ${valorEmail}`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, aceptar',
+        cancelButtonText: 'No, cancelar',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire(
+            'Guardado',
+            'Su mail fue guardado con exito!',
+            'Ok'
+        )
+        } else if (
+          /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+        ) {
+        swalWithBootstrapButtons.fire(
+            'Cancelado',
+            'Por favor, reescriba su mail!',
+            'Ok'
+        )
+        }
+    })
 }
